@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-UA-Compatible" content="ie=edge">
+    <meta http-equiv="refresh" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <title>CatFacts</title>
+</head>
+<body >
+
+    
+
+	<div class="displaybox">
+        <div class="text">Facts About Cats</div>
+
+        <div id="result" class="content"></div>
+
+        
+        <script type="text/javascript">
+        	function facts()
+        {
+            fetch('https://catfact.ninja/fact')
+                    .then((response) => {
+                        return response.json();
+                    })
+                    .then((myJson) => {
+                        // console.log(myJson[0])
+                        
+                        document.getElementById("result").innerHTML=myJson.fact;
+            
+        
+                    })
+
+                  
+        
+        }
+        facts();      
+
+       setTimeout(function(){location.reload();},15000);
+
+
+     
+        
+        </script>   
+
+       
+    </div>
+
+</body>
+</html>
